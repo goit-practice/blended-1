@@ -50,9 +50,16 @@
 //Після того, як користувач припинив серію введень і натиснув кнопку Cancel, показати alert з рядком "The total sum of the entered numbers is [total]."
 //Робити перевірку, що користувач ввів саме число, а не довільний рядок не потрібно.
 
-//
-// let inputValue = prompt("Hello, enter please the number");
-//
+// let inputValue
+// let total = 0
+// while (inputValue !== null) {
+//     inputValue = prompt('Hello, enter please the number')
+
+//     if (inputValue !== null) {
+//         total += Number(inputValue)
+//     }
+// }
+// alert(`The total sum of the entered numbers is ${total}`)
 
 //7. Напишіть цикл, який пропонує ввести
 //число більше 100 через prompt 'Hello, enter please the number greater then 100.' та виводить його у alert, якщо умова виконана
@@ -60,9 +67,16 @@
 //Цикл повинен запитувати число, поки користувач не введе число більше 100.
 // Якщо користувач натисне кнопку відміни у prompt, то у alert треба вивести 'Goodbye'.
 
-//
-// let input = prompt("Hello, enter please the number greater then 100.");
-//
+// let input
+// while (input !== null) {
+//     input = prompt('Hello, enter please the number greater then 100.')
+//     if (input > 100) {
+//         alert('Good of you!')
+//     }
+//     if (input === null) {
+//         alert('Goodbye')
+//     }
+// }
 
 // 8. При завантаженні сторінки користувачу у prompt пропонується ввести число від 0 до 59 'Hello, enter please the number between  0 and 59'.
 //Зроби перевірку на відповідність введеного числа вказаному діапазону (0-59). Якщо число не відповідає виведіть
@@ -74,52 +88,85 @@
 // 31 - 45 3тя чверть
 // 46 - 59 4та чверть
 
-//// let inputValue = prompt("Hello, enter please the number between  0 and 59");
-//
-//
+// let inputValue = prompt('Hello, enter please the number between  0 and 59')
 
 //9. Дано рядок, що складається із символів, наприклад, 'a1abcde'.
 // Перевір, що першим символом цього рядка є літера 'a'.
 // Якщо так - виведи 'yes' у консоль, в противному випадку виведи 'no'.
 
-//
-// const str = "abcde";
-//
+// const str = 'abcde'
+// // if (str[0] === 'a') {
+// //     console.log('yes')
+// // } else {
+// //     console.log('no')
+// // }
+
+// const newStr = str[0] === 'a' ? 'yes' : 'no'
+// console.log(newStr);
 
 // 10. Напишіть функцію, яка приймає два параметри довжину і елемент-заповнювач та повертає масив з вказаною довжиною і заповнює його переданим елементом
 // наприклад, виклик функції fillArray(3, 'a') має повернути масив ['a', 'a', 'a']
-//
-//
-//
+
+// function fillArray(arraySize, value) {
+//     const newArray = []
+//     for (let i = 0; i < arraySize; i += 1) {
+//         newArray.push(value)
+//     }
+//     return newArray
+// }
+// console.log(fillArray(3, 'a'))
+// const fn = (arraySize, value) => new Array(arraySize).fill(value)
 
 /// 11. Написати функцію, яка буде видаляти з масива усі значення, які приводяться до false
 // undefined, null, false, '', 0, NaN
 
-
-//
 // const array = [
-//   1,
-//   0,
-//   54,
-//   "doc",
-//   null,
-//   "jpg",
-//   undefined,
-//   "",
-//   "png",
-//   "exe",
-//   false,
-//   "mp4",
-//   NaN,
-//   "hbs",
-// ];
-
-
+//     1,
+//     0,
+//     54,
+//     'doc',
+//     null,
+//     'jpg',
+//     undefined,
+//     '',
+//     'png',
+//     'exe',
+//     false,
+//     'mp4',
+//     NaN,
+//     'hbs',
+// ]
+// function removeFn() {
+//     const newArray = []
+//     for (let i = 0; i < array.length; i += 1) {
+//         if (array[i]) {
+//             newArray.push(array[i])
+//         }
+//     }
+//     return newArray
+// }
+// console.log(
+//     removeFn([
+//         1,
+//         0,
+//         54,
+//         'doc',
+//         null,
+//         'jpg',
+//         undefined,
+//         '',
+//         'png',
+//         'exe',
+//         false,
+//         'mp4',
+//         NaN,
+//         'hbs',
+//     ])
+// )
 // 12. Напиши скрипт, який порівняє два масива і виведе у консоль результат чи усі елементи у них однакові
 
-//
-// const arr1 = [1, 4, 6, "color", 324, 232, "list", 11, 9, "dream", 34, 0, -30];
-// const arr2 = [6, "dream", -30, 11, 9, 1, 324, 34, "color", 4, 232, 0, "list"];
+// const arr1 = [1, 4, 6, 'color', 324, 232, 'list', 11, 9, 'dream', 34, 0, -30]
+// const arr2 = [6, 'dream', -30, 11, 9, 1, 324, 34, 'color', 4, 232, 0, 'list']
 
 // const arr3 = [4, 232, 6, -30, "color", 324, "list", 1, 11, 9, "dream", 34, 0];
 // const arr4 = ["color", 6, -30, 11, 9, 1, "dream", 324, 34, 4, 232, 0, "list"];
@@ -130,3 +177,42 @@
 // const arr7 = [1, 4, 6, "color", 324, 232, "list", 11, 9, "dream", 34, 0, -30];
 // const arr8 = [6, "dream", -30, 10, 9, 1, 324, 34, "color", 4, 232, 0, "list"];
 //
+// function getCommonElements(arr1, arr2) {
+//     // Change code below this line
+
+//     // const newArray = []
+//     // for (let i = 0; i <= arr1.length; i += 1) {
+//     //     if (arr2.includes(arr1[i])) {
+//     //         newArray.push(arr1[i])
+//     //     }
+//     // }
+//     // return newArray
+
+//     // Change code above this line
+// }
+// const result = arr1.length === arr2.length ? true : false
+// console.log(result)
+// console.log(
+//     getCommonElements(
+//         [1, 4, 6, 'color', 324, 232, 'list', 11, 9, 'dream', 34, 0, -30],
+//         [6, 'dream', 'color', 4, 232, 0, 'list']
+//     )
+// )
+
+// / 6. Напишіть функцію each(array, callback), яка
+//першим параметром приймає масив, а другим - функцію,
+//яка застосується до кожного елемента масива.
+//Функція each має повернути новий масив, елементами
+//якого будуть результати виклику callback.
+//callback функція має множити елементи на 2
+const array = [1, 2, 3, 4, 5, 6]
+function each(array, callback) {
+    const results = []
+    array.forEach((item) => {
+        const result = callback(item)
+        results.push(result)
+    })
+    return results
+}
+const doubleValues = (value) => value * 2
+console.log(each(array, doubleValues))
